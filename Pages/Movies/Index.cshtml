@@ -39,6 +39,12 @@
             @*<th>
                 @Html.DisplayNameFor(model => model.Movie[0].Rating)
             </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Shop)
+            </th>
+            <th>
+                @Html.Label("Buy?")
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -59,8 +65,10 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Comment)
+                    @Html.DisplayFor(modelItem => item.Shop)
                 </td>
+               
+                <th>@Html.CheckBox("isActive", true)</th>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                     <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
